@@ -2,9 +2,11 @@
 <html lang="pt-br">
 
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
     <title>Spider Track</title>
 </head>
@@ -13,12 +15,27 @@
 
     <div class="wrap">
 
+        <div id="terms">
+            <div>
+                <p>Para que você tenha a melhor experiência de navegação possível neste aplicativo, precisamos armazenar
+                    algumas informações em seu computador na forma de <strong>cookies</strong>. Nenhuma informação
+                    sensível ou sigilosa será
+                    armazenada, apenas dados de controle.</p>
+                <p class="terms-btn">
+                    <button class="terms" name="accept">Aceitar</button>
+                    <button class="terms" name="reject">Rejeitar</button>
+                </p>
+            </div>
+        </div>
+
         <header>
             <a routerLink="home"><i class="fas fa-fw fa-spider"></i></a>
             <h1>Spider Track<small>Na trilha das teias</small></h1>
         </header>
 
-        <main></main>
+        <main>
+            <noscript>Ative o JavaScript no navegador para aproveitar ao máximo os recursos deste site!</noscript>
+        </main>
 
         <nav>
             <a routerLink="home"><i class="fas fa-fw fa-home"></i> <span>Início</span></a>
@@ -31,9 +48,9 @@
 
     </div>
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 
