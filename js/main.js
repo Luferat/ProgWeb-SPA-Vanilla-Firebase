@@ -10,6 +10,15 @@ function main() {
     // Micro ajustes na view
     changeWidth();
 
+    // LGPD - Trata aceite do usuário
+    termsDetect();
+
+    // Se a largura da tela mudar
+    $(window).resize(changeWidth);
+}
+
+function termsDetect() {
+
     // LGPD - Obtém aceite do usuário
     var terms = $.cookie('acceptTerms');
     // console.log(terms);
@@ -18,7 +27,7 @@ function main() {
     if (terms == undefined) {
 
         // Exibe termos após a carga do site
-        var termsTime = setTimeout(function () {
+        var termsTime = setTimeout(() => {
             $('#terms').slideDown(600);
         }, 1000);
 
@@ -31,9 +40,6 @@ function main() {
         // Oculta termos
         $('#terms').hide(0);
     }
-
-    // Se a largura da tela mudar
-    $(window).resize(changeWidth);
 }
 
 /* LGPD - Trata aceite dos termos */

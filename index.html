@@ -36,71 +36,49 @@
         <nav>
             <a routerLink="home"><i class="fas fa-fw fa-home"></i> <span>Início</span></a>
             <a routerLink="news"><i class="fas fa-fw fa-newspaper"></i> <span>Notícias</span></a>
-            <a routerLink="cantacts"><i class="fas fa-fw fa-comment-dots"></i> <span>Contatos</span></a>
+            <a routerLink="contacts"><i class="fas fa-fw fa-comment-dots"></i> <span>Contatos</span></a>
             <a routerLink="about"><i class="fas fa-fw fa-info-circle"></i> <span>Sobre</span></a>
         </nav>
 
         <main>
             <noscript>Ative o JavaScript no navegador para aproveitar ao máximo os recursos deste site!</noscript>
 
-            <!-- Exemplo de conteúdo das páginas / REMOVA após implementação -->
-            <style>
-                .content {
-                    background: #fff;
-                    border-radius: 0.4rem;
-                    border: 1px dotted grey;
-                    flex-grow: 1;
-                    padding: 0.5rem;
-                }
 
-                .content h2,
-                aside h3 {
-                    margin: 0;
-                }
+            <!-- REMOVER - Conteúdo para testes -->
 
-                aside {
-                    background: #ddd;
-                    border-radius: 0.4rem;
-                    border: 1px dotted grey;
-                    padding: 0.5rem;
-                    margin-top: 0.4rem;
-                }
-
-                @media (min-width: 576px) {
-                    .content {
-                        margin: 0;
-                        padding: 1rem;
-                    }
-
-                    aside {
-                        margin: 0 0 0 0.4rem;
-                        min-width: 180px;
-                        max-width: 200px;
-                        padding: 1rem;
-                    }
-                }
-            </style>
             <div class="content">
-                <h2>Conteúdo</h2>
+                <h2>Conteúdo de Teste</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minus hic aliquam eligendi delectus,
                     eveniet, explicabo blanditiis et est iste maxime dolor molestiae quidem natus, inventore
                     consequuntur quia quasi sequi!</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minus hic aliquam eligendi delectus,
                     eveniet, explicabo blanditiis et est iste maxime dolor molestiae quidem natus, inventore
                     consequuntur quia quasi sequi!</p>
+                <ul>
+                    <li><a href="http://luferat.net/" target="_blank">&uarr; Site do Fessô</a></li>
+                    <li><a href="https://www.pi2c.tk/">&rarr; Site do Projeto Final</a></li>
+                </ul>
+                <p><button routerLink="teste/valorx/valory/valorz">Clique-me</button></p>
             </div>
             <aside>
                 <h3>SideBar</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </aside>
-            <!-- Modelo de conteúdo das páginas / REMOVA após implementação -->
+
+            <!-- REMOVER - Conteúdo para testes -->
+
 
         </main>
 
         <footer>
             <a routerLink="home"><i class="fas fa-fw fa-home"></i></a>
-            <div>&copy; Copyright 2020 André Luferat</div>
-            <a routerLink="_reload"><i class="fas fa-fw fa-arrow-alt-circle-up"></i></a>
+            <div class="social">
+                <a href="https://facebook.com/" target="_blank"><i class="fab fa-fw fa-facebook-square"></i></a>
+                <a href="https://youtube.com/" target="_blank"><i class="fab fa-fw fa-youtube-square"></i></a>
+                <a href="https://GitHub.com/" target="_blank"><i class="fab fa-fw fa-github-square"></i></a>
+                <a href="https://Linkedin.com/" target="_blank"><i class="fab fa-fw fa-linkedin"></i></a>
+            </div>
+            <div class="copyright">&copy; Copyright 2020 André Luferat</div>
         </footer>
 
     </div>

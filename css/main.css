@@ -5,25 +5,27 @@
   --body-font-family: sans-serif;
   --a-color: rgb(69, 130, 180);
   --a-hover-color: rgb(255, 68, 0);
-  --header-background: #9b4943;
+  --header-background: #954742ee;
   --logo-color: orangered;
   --logo-stroke: 0.5px #ffffff;
   --header-color: rgb(255, 255, 255);
   --header-small-color: rgb(255, 255, 0);
-  --nav-background: #18121e;
+  --nav-background: #18121edd;
   --nav-color: #eac67a;
   --nav-hover-color: #18121e;
   --nav-hover-background: #eac67a;
-  --footer-background: rgb(122, 141, 148);
+  --footer-background: rgba(122, 141, 148, 0.9);
   --footer-color: #000;
   --main-background: transparent;
-  --terms-background: #ffff97;
+  --terms-background: #ffff97dd;
   --terms-color: darkred;
   --terms-border: 1px dotted red;
   --terms-btn-color: #fff;
   --terms-btn-accept-background: steelblue;
   --terms-btn-reject-background: orangered;
   --footer-a-color: #000;
+  --content-background: rgba(255, 255, 255, 0.9);
+  --aside-background: rgba(200, 200, 200, 0.9);
 }
 
 /* Reset */
@@ -145,7 +147,7 @@ main {
 footer {
   background: var(--footer-background);
   color: var(--footer-color);
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   border-radius: 0.4rem;
   border: 1px dotted #fff;
@@ -153,7 +155,7 @@ footer {
 footer a {
   display: none;
   color: var(--footer-a-color);
-  padding: 0.2rem;
+  padding: 0.3rem 0.2rem 0.2rem 0.2rem;
   border-radius: 0.3rem;
   font-size: 1.3rem;
 }
@@ -161,10 +163,14 @@ footer a:hover {
   background: var(--footer-a-color);
   color: var(--footer-background);
 }
-footer div {
+footer .social {
+  padding-left: 2.6rem;
+}
+footer .copyright {
   text-align: center;
   font-size: 0.85rem;
-  padding: 0.4rem 0;
+  padding: 0.5rem 1rem;
+  margin-left: auto;
 }
 
 #terms {
@@ -223,7 +229,7 @@ footer div {
     order: 4;
   }
   footer a {
-    display: block;
+    display: inline-block;
   }
   header i {
     font-size: 3rem;
@@ -237,5 +243,36 @@ footer div {
   }
   .terms-btn button {
     margin-top: 0;
+  }
+}
+
+.content {
+  background: var(--content-background);
+  border-radius: 0.4rem;
+  border: 1px dotted grey;
+  flex-grow: 1;
+  padding: 0.5rem;
+}
+.content h2,
+aside h3 {
+  margin: 0;
+}
+aside {
+  background: var(--aside-background);
+  border-radius: 0.4rem;
+  border: 1px dotted grey;
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+}
+@media (min-width: 576px) {
+  .content {
+    margin: 0;
+    padding: 1rem;
+  }
+  aside {
+    margin: 0 0 0 0.4rem;
+    min-width: 180px;
+    max-width: 200px;
+    padding: 1rem;
   }
 }
