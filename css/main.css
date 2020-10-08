@@ -16,7 +16,7 @@
   --nav-hover-background: #eac67a;
   --footer-background: rgb(122, 141, 148);
   --footer-color: #000;
-  --main-background: transparentvar(--footer-background);
+  --main-background: transparent;
   --terms-background: #ffff97;
   --terms-color: darkred;
   --terms-border: 1px dotted red;
