@@ -15,12 +15,12 @@
 
     <div class="wrap">
 
+        <!-- Aceite dos termos de serviço, conforme LGPD - LEI Nº 13.709, DE 14 DE AGOSTO DE 2018 -->
         <div id="terms">
             <div>
                 <p>Para que você tenha a melhor experiência de navegação possível neste aplicativo, precisamos armazenar
                     algumas informações em seu computador na forma de <strong>cookies</strong>. Nenhuma informação
-                    sensível ou sigilosa será
-                    armazenada, apenas dados de controle.</p>
+                    sensível ou sigilosa será armazenada, apenas dados de navegação e de controle.</p>
                 <p class="terms-btn">
                     <button class="terms" name="accept">Aceitar</button>
                     <button class="terms" name="reject">Rejeitar</button>
@@ -33,10 +33,6 @@
             <h1>Spider Track<small>Na trilha das teias</small></h1>
         </header>
 
-        <main>
-            <noscript>Ative o JavaScript no navegador para aproveitar ao máximo os recursos deste site!</noscript>
-        </main>
-
         <nav>
             <a routerLink="home"><i class="fas fa-fw fa-home"></i> <span>Início</span></a>
             <a routerLink="news"><i class="fas fa-fw fa-newspaper"></i> <span>Notícias</span></a>
@@ -44,15 +40,78 @@
             <a routerLink="about"><i class="fas fa-fw fa-info-circle"></i> <span>Sobre</span></a>
         </nav>
 
-        <footer>&copy; Copyright 2020 André Luferat</footer>
+        <main>
+            <noscript>Ative o JavaScript no navegador para aproveitar ao máximo os recursos deste site!</noscript>
+
+            <!-- Exemplo de conteúdo das páginas / REMOVA após implementação -->
+            <style>
+                .content {
+                    background: #fff;
+                    border-radius: 0.4rem;
+                    border: 1px dotted grey;
+                    flex-grow: 1;
+                    padding: 0.5rem;
+                }
+
+                .content h2,
+                aside h3 {
+                    margin: 0;
+                }
+
+                aside {
+                    background: #ddd;
+                    border-radius: 0.4rem;
+                    border: 1px dotted grey;
+                    padding: 0.5rem;
+                    margin-top: 0.4rem;
+                }
+
+                @media (min-width: 576px) {
+                    .content {
+                        margin: 0;
+                        padding: 1rem;
+                    }
+
+                    aside {
+                        margin: 0 0 0 0.4rem;
+                        min-width: 180px;
+                        max-width: 200px;
+                        padding: 1rem;
+                    }
+                }
+            </style>
+            <div class="content">
+                <h2>Conteúdo</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minus hic aliquam eligendi delectus,
+                    eveniet, explicabo blanditiis et est iste maxime dolor molestiae quidem natus, inventore
+                    consequuntur quia quasi sequi!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minus hic aliquam eligendi delectus,
+                    eveniet, explicabo blanditiis et est iste maxime dolor molestiae quidem natus, inventore
+                    consequuntur quia quasi sequi!</p>
+            </div>
+            <aside>
+                <h3>SideBar</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </aside>
+            <!-- Modelo de conteúdo das páginas / REMOVA após implementação -->
+
+        </main>
+
+        <footer>
+            <a routerLink="home"><i class="fas fa-fw fa-home"></i></a>
+            <div>&copy; Copyright 2020 André Luferat</div>
+            <a routerLink="_reload"><i class="fas fa-fw fa-arrow-alt-circle-up"></i></a>
+        </footer>
 
     </div>
 
+    <!-- Importa framework jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<<<<<<< HEAD
+
+    <!-- Biblioteca de manipulação de cookies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-=======
->>>>>>> 5594623786426a3b44eba4079d25c32f52338825
+
+    <!-- JavaScript do aplicativo -->
     <script src="js/main.js"></script>
 
 </body>

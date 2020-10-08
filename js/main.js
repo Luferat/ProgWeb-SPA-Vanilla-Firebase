@@ -1,8 +1,14 @@
 /* Executa a aplicação 'main()' quando documentos estiverem prontos */
 $(document).ready(main());
 
+/* Declara variáveis globais */
+var termsRedirect = 'http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2018/Lei/L13709.htm';
+
 /* Aplicação principal */
 function main() {
+
+    // Micro ajustes na view
+    changeWidth();
 
     // LGPD - Obtém aceite do usuário
     var terms = $.cookie('acceptTerms');
@@ -25,6 +31,9 @@ function main() {
         // Oculta termos
         $('#terms').hide(0);
     }
+
+    // Se a largura da tela mudar
+    $(window).resize(changeWidth);
 }
 
 /* LGPD - Trata aceite dos termos */
@@ -52,9 +61,25 @@ function termsAction() {
         alert('Obrigado por ter acessado nosso site!');
 
         // Sai do site
-        top.location.href = 'http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2018/Lei/L13709.htm';
+        top.location.href = termsRedirect;
     }
 
     // Termina, sem fazer mais nada
+    return false;
+}
+
+// Micro ajustes na largura da view
+function changeWidth() {
+
+    // Se aparece a barra de rolagem
+    if ($(document).height() > $(window).height()) {
+
+        // Compensa a barra de rolagem no rodapé
+        $('footer').css('margin-bottom', '0.4rem');
+    } else {
+
+        // Reseta a barra de rolagem
+        $('footer').css('margin-bottom', '0');
+    }
     return false;
 }
