@@ -33,7 +33,7 @@ function main() {
     return false;
 }
 
-// LGPD - Detecta aceite dos cookies
+/* LGPD - Detecta aceite dos cookies */
 function termsDetect() {
 
     // LGPD - Obtpem cookie de aceite
@@ -95,7 +95,7 @@ function termsAction() {
     return false;
 }
 
-// Micro ajustes na largura da view
+/* Micro ajustes na largura da view */
 function changeWidth() {
 
     // Se aparece a barra de rolagem vertical
@@ -115,7 +115,7 @@ function changeWidth() {
     return false;
 }
 
-// Processa clique em uma rota
+/* Processar clique em uma rota */
 function routerLink() {
 
     // Obtém o endereço da página a ser carregada
@@ -128,7 +128,7 @@ function routerLink() {
     return false;
 }
 
-// Obter o caminho dos documentos solicitados
+/* Obter o caminho dos documentos solicitados */
 function routerLoad(routePath) {
 
     // Obtém o primeiro elemento da array routePath
@@ -176,7 +176,7 @@ function routerLoad(routePath) {
     return false;
 }
 
-// (*) Obter variáveis da rota
+/* (*) Obter variáveis da rota */
 function routerVars() {
 
     // (*) Obtém todos os elementos do URL.path
