@@ -1,3 +1,5 @@
+// (*) Debugs e otimizações
+
 /* Executa a aplicação 'main()' quando documentos estiverem prontos */
 $(document).ready(main());
 
@@ -5,6 +7,9 @@ $(document).ready(main());
 
 // Se não aceita cookies, vai para este site
 var termsRedirect = 'http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2018/Lei/L13709.htm';
+
+// (*) Bloqueia recarga de um JavaScript
+var noReload = [];
 
 /* Aplicação principal */
 function main() {
@@ -144,8 +149,16 @@ function routerLoad(routePath) {
     // Carrega o HTML da página
     $('main').load(load.html, function() {
 
-        // Carrega e executa o JavaScript após a carga do HTML
-        $.getScript(load.js);
+        // (*) Se este JavaScript ainda não existe
+        if (noReload[page] != 1) {
+
+            // (*) Carrega e executa o JavaScript após a carga do HTML
+            $.getScript(load.js, function() {
+
+                // (*) Seta JavaScript como existente
+                noReload[page] = 1;
+            });
+        }
     });
 
     // Atualiza a barra de endereços do navegador (FAKE)
@@ -161,4 +174,18 @@ function routerLoad(routePath) {
 
     // Termina, sem fazer mais nada
     return false;
+}
+
+// (*) Obter variáveis da rota
+function routerVars() {
+
+    // (*) Obtém todos os elementos do URL.path
+    var parts = window.location.pathname.split('/');
+
+    // (*) Remove dois primeiros elementos (null e página)
+    parts.shift();
+    parts.shift();
+
+    // (*) Retorna com os valores em um array
+    return parts;
 }
