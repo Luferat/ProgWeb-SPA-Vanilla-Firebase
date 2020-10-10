@@ -7,9 +7,6 @@ var termsRedirect = 'http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2018/Lei
 /* Aplicação principal */
 function main() {
 
-    // Carrega a página inicial
-    routerLoad('home');
-
     // Micro ajustes na view
     changeWidth();
 
@@ -18,9 +15,6 @@ function main() {
 
     // Se a largura da tela mudar
     $(window).resize(changeWidth);
-
-    // Se clicar em um elemento de rota...
-    $(document).on('click', '[routerLink]', routerLink);
 }
 
 function termsDetect() {
@@ -32,7 +26,7 @@ function termsDetect() {
     // LGPD - Se usuário não aceitou, pede aceite
     if (terms == undefined) {
 
-        // Exibe termos 1 segundo após a carga do site
+        // Exibe termos após a carga do site
         var termsTime = setTimeout(() => {
             $('#terms').slideDown(600);
         }, 1000);
@@ -86,60 +80,12 @@ function changeWidth() {
     // Se aparece a barra de rolagem
     if ($(document).height() > $(window).height()) {
 
-        // console.log('apareceu');
-
         // Compensa a barra de rolagem no rodapé
         $('footer').css('margin-bottom', '0.4rem');
     } else {
-
-        // console.log('sumiu');
 
         // Reseta a barra de rolagem
         $('footer').css('margin-bottom', '0');
     }
     return false;
-}
-
-// Função para processar clicque em rotas
-function routerLink() {
-
-    // Lê o nome da página a ser carregada
-    var page = $(this).attr('routerLink');
-    // console.log(page);
-
-    // Exibir a página solicitada
-    if (page) routerLoad(page);
-    return false;
-}
-
-// Função que exibe a página solicitada
-function routerLoad(routePath) {
-
-    // Obtém o primeiro elemento da array routePath
-    var page = routePath.split('/')[0];
-
-    // Monta os links dos documentos da página
-    var load = {
-        css: `/pages/${page}/${page}.css`,
-        html: `/pages/${page}/${page}.html`,
-        js: `/pages/${page}/${page}.js`,
-        hash: `/${routePath}`
-    };
-
-    // Carrega o CSS da página
-    $('#headCss').attr('href', load.css);
-    $('main').load(load.html, function() {
-        $.getScript(load.js);
-    });
-
-    // Atualiza a barra de endereços do navegador (FAKE)
-    if (history.pushState) {
-
-        // Navegadores modernos
-        window.history.pushState('', '', load.hash);
-    } else {
-
-        // Dinossauros
-        document.location.href = load.hash;
-    }
 }
