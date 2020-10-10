@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.png">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/null.css" id="headCss">
     <title>Spider Track</title>
 </head>
 
@@ -18,9 +19,8 @@
         <!-- Aceite dos termos de serviço, conforme LGPD - LEI Nº 13.709, DE 14 DE AGOSTO DE 2018 -->
         <div id="terms">
             <div>
-                <p>Para que você tenha a melhor experiência de navegação possível neste aplicativo, precisamos armazenar
-                    algumas informações em seu computador na forma de <strong>cookies</strong>. Nenhuma informação
-                    sensível ou sigilosa será armazenada, apenas dados de navegação e de controle.</p>
+                <p>Para que você tenha a melhor experiência de navegação possível neste aplicativo, precisamos armazenar algumas informações em seu computador na forma de <strong>cookies</strong>. Nenhuma informação sensível ou sigilosa será armazenada,
+                    apenas dados de navegação e de controle.</p>
                 <p class="terms-btn">
                     <button class="terms" name="accept">Aceitar</button>
                     <button class="terms" name="reject">Rejeitar</button>
@@ -34,7 +34,7 @@
         </header>
 
         <nav>
-            <a routerLink="home"><i class="fas fa-fw fa-home"></i> <span>Início</span></a>
+            <a routerLink="home/teste/biscoito"><i class="fas fa-fw fa-home"></i> <span>Início</span></a>
             <a routerLink="news"><i class="fas fa-fw fa-newspaper"></i> <span>Notícias</span></a>
             <a routerLink="contacts"><i class="fas fa-fw fa-comment-dots"></i> <span>Contatos</span></a>
             <a routerLink="about"><i class="fas fa-fw fa-info-circle"></i> <span>Sobre</span></a>
@@ -42,32 +42,6 @@
 
         <main>
             <noscript>Ative o JavaScript no navegador para aproveitar ao máximo os recursos deste site!</noscript>
-
-
-            <!-- REMOVER - Conteúdo para testes -->
-
-            <div class="content">
-                <h2>Conteúdo de Teste</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minus hic aliquam eligendi delectus,
-                    eveniet, explicabo blanditiis et est iste maxime dolor molestiae quidem natus, inventore
-                    consequuntur quia quasi sequi!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim minus hic aliquam eligendi delectus,
-                    eveniet, explicabo blanditiis et est iste maxime dolor molestiae quidem natus, inventore
-                    consequuntur quia quasi sequi!</p>
-                <ul>
-                    <li><a href="http://luferat.net/" target="_blank">&uarr; Site do Fessô</a></li>
-                    <li><a href="https://www.pi2c.tk/">&rarr; Site do Projeto Final</a></li>
-                </ul>
-                <p><button routerLink="teste/valorx/valory/valorz">Clique-me</button></p>
-            </div>
-            <aside>
-                <h3>SideBar</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </aside>
-
-            <!-- REMOVER - Conteúdo para testes -->
-
-
         </main>
 
         <footer>
