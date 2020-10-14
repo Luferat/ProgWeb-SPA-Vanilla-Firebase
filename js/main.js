@@ -122,7 +122,7 @@ function routerLink() {
     var page = $(this).attr('routerLink');
 
     // Carrega a página solicitada
-    if (page) routerLoad(page);
+    routerLoad(page);
 
     // Termina, sem fazer mais nada
     return false;
