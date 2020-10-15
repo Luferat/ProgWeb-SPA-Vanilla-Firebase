@@ -131,7 +131,7 @@ function routerLink() {
 /* Obter o caminho dos documentos solicitados */
 function routerLoad(routePath) {
 
-    $('script').remove('#scriptPage');
+    $('.page-element').remove();
 
     // (*3) Se não solicitou uma rota interna, obtém a rota do URL
     if (!routePath) {
@@ -156,7 +156,7 @@ function routerLoad(routePath) {
     // console.log(load);
 
     // Carrega o CSS da página
-    $('#headCss').attr('href', load.css);
+    $('head').append(`<link class="page-element" rel="stylesheet" href="${load.css}?rnd=${randomChars(10)}">`);
 
     // Carrega o HTML da página
     $('main').load(load.html, '', function () {
@@ -165,7 +165,7 @@ function routerLoad(routePath) {
         setTitle();
 
         // (*3) Carrega javaScript da página
-        $('body').append(`<script id="scriptPage" src="${load.js}?rnd=${randomChars(10)}"></script>`);
+        $('body').append(`<script class="page-element" src="${load.js}?rnd=${randomChars(10)}"></script>`);
 
     });
 
