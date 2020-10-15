@@ -5,6 +5,9 @@ $(document).ready(main());
 
 /* Declara variáveis globais */
 
+// Temporizador global
+var timer, variables;
+
 // (*3) Nome do site para a tag <title>
 var siteName = 'Spider Track';
 
@@ -128,6 +131,8 @@ function routerLink() {
 /* Obter o caminho dos documentos solicitados */
 function routerLoad(routePath) {
 
+    $('script').remove('#scriptPage');
+
     // (*3) Se não solicitou uma rota interna, obtém a rota do URL
     if (!routePath) {
 
@@ -148,6 +153,7 @@ function routerLoad(routePath) {
         js: `/pages/${page}/${page}.js`, // JavaScript
         hash: `/${routePath}` // Barra de endereços
     };
+    // console.log(load);
 
     // Carrega o CSS da página
     $('#headCss').attr('href', load.css);
@@ -158,16 +164,9 @@ function routerLoad(routePath) {
         // (*3) Altera título da página
         setTitle();
 
-        // (*3) Se este JavaScript ainda não existe
-        if (noReload[page] != 1) {
+        // (*3) Carrega javaScript da página
+        $('body').append(`<script id="scriptPage" src="${load.js}?rnd=${randomChars(10)}"></script>`);
 
-            // (*3) Carrega e executa o JavaScript após a carga do HTML
-            $.getScript(load.js, function () {
-
-                // (*3) Seta JavaScript como existente
-                noReload[page] = 1;
-            });
-        }
     });
 
     // Atualiza a barra de endereços do navegador (FAKE)
@@ -183,20 +182,6 @@ function routerLoad(routePath) {
 
     // Termina, sem fazer mais nada
     return false;
-}
-
-/* (*3) Obter variáveis da rota */
-function routerVars() {
-
-    // (*3) Obtém todos os elementos do URL.path
-    var parts = window.location.pathname.split('/');
-
-    // (*3) Remove dois primeiros elementos (null e página)
-    parts.shift();
-    parts.shift();
-
-    // (*3) Retorna com os valores em um array
-    return parts;
 }
 
 /* (*3) Atualiza tag <title> com título <h2> da página. */
@@ -218,4 +203,22 @@ function setTitle() {
 
     // Termina sem fazer mais nada
     return false;
+}
+
+// (*3) Gera caracteres aleatórios
+function randomChars(len) {
+	
+	// Armazenará a sequência aleatória
+	var text = '';
+
+	// Lista de caracteres que podem ser usados
+	var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+	// Obtém a sequência
+	for (var i = 0; i < len; i++) {
+		text += chars.charAt(Math.floor(Math.random() * chars.length));
+	}
+	
+	// Retorna sequência pronta
+	return text;
 }
