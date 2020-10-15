@@ -138,6 +138,9 @@ function routerLoad(routePath) {
     // Obtém o primeiro elemento da array routePath que é o caminho dos documentos
     var page = routePath.split('/')[0];
 
+    // (*3) Se não definiu uma página, carrega a 'home' por padrão
+    if (page == '') page = 'home';
+
     // Monta os links dos documentos da página
     var load = {
         css: `/pages/${page}/${page}.css`, // Folha de estilos
@@ -150,11 +153,11 @@ function routerLoad(routePath) {
     $('#headCss').attr('href', load.css);
 
     // Carrega o HTML da página
-    $('main').load(load.html, function () {
+    $('main').load(load.html, '', function () {
 
         // (*3) Altera título da página
         setTitle();
-        
+
         // (*3) Se este JavaScript ainda não existe
         if (noReload[page] != 1) {
 
@@ -199,7 +202,7 @@ function routerVars() {
 /* (*3) Atualiza tag <title> com título <h2> da página. */
 function setTitle() {
 
-    // Obtém o título h2 da página, exceto se tiver class="notitle"
+    // Obtém o título 'h2' da página, exceto se tiver class="notitle"
     var title = $('main h2:not([class="notitle"])').text();
 
     // Atribui nome do site ao <title>
