@@ -1,21 +1,15 @@
 // (*3) Debugs e otimizações da Aula 3
 
 /* Executa a aplicação 'main()' quando documentos estiverem prontos */
-$(document).ready(main());
+$(document).ready(main);
 
 /* Declara variáveis globais */
-
-// Temporizador global
-var timer, variables;
 
 // (*3) Nome do site para a tag <title>
 var siteName = 'Spider Track';
 
 // Se não aceita cookies, vai para este site
 var termsRedirect = 'http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2018/Lei/L13709.htm';
-
-// (*3) Evita a recarga de um JavaScript
-var noReload = [];
 
 /* Aplicação principal */
 function main() {
@@ -131,6 +125,9 @@ function routerLink() {
 /* Obter o caminho dos documentos solicitados */
 function routerLoad(routePath) {
 
+    // console.log(window.location.pathname.substring(1));
+
+    // Remove todos os elementos (tags) com a class="page-element"
     $('.page-element').remove();
 
     // (*3) Se não solicitou uma rota interna, obtém a rota do URL
@@ -155,7 +152,7 @@ function routerLoad(routePath) {
     };
     // console.log(load);
 
-    // Carrega o CSS da página
+    // (*3) Carrega o CSS da página
     $('head').append(`<link class="page-element" rel="stylesheet" href="${load.css}?rnd=${randomChars(10)}">`);
 
     // Carrega o HTML da página
