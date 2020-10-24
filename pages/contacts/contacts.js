@@ -21,8 +21,6 @@ function sendContact() {
         date: new Date()
     }
 
-    // console.log(contact);
-
     // Se documento ainda não foi enviado
     if (sended == 0) {
 
