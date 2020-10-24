@@ -326,3 +326,11 @@ button.block {
     width: 95%;
     margin: auto;
 }
+
+.text-center {
+    text-align: center;
+}
+
+.warning {
+    color: red;
+}

@@ -1,0 +1,10 @@
+.news-item {
+    background: #eee;
+    border: 1px dotted #ccc;
+    margin-bottom: 1rem;
+    padding: .5rem;
+}
+
+.news-item h3 {
+    margin: 0;
+}

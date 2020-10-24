@@ -4,6 +4,46 @@ var sended = 0;
 /* Evento) Monitora o envio do formulário */
 $(document).on('submit', '#contact', sendContact);
 
+/* Lê a coleção 'contacts' e lista os contatos ja enviados */
+
+// Acessa a coleção no Firebase
+db.collection('contacts').get()
+
+    // Se conseguiu acessar
+    .then((myContacts) => {
+
+        // Variável com view dos contatos
+        var contactList = '<ul>';
+
+        myContacts.forEach((myContact) => {
+            // console.log(`${myContact.id} => ${myContact.data()}`);
+            // console.log(myContact.data());
+
+            var contactDoc = myContact.data();
+
+            contactList += `<li>${contactDoc.name}</li>
+        <ul>
+            <li>E-mail: ${contactDoc.email}</li>
+            <li>Assunto: ${contactDoc.subject}</li>
+            <li>Mensagem: ${contactDoc.message}</li>
+            <li>Enviado em: ${contactDoc.date}</li>
+        </ul><hr>`;
+        });
+
+        contactList += '</ul>';
+
+        // Mostrar tudo na view
+        // $('#viewContacts').html(contactList);
+    })
+
+    // Se deu errado
+    .catch((error) => {
+
+        // Exibe log de erro
+        console.error(`Algo deu errado: ${error}`);
+    });
+
+
 /* Processa envio do formulário de contatos */
 function sendContact() {
 
